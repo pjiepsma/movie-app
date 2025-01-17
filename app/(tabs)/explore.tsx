@@ -1,9 +1,9 @@
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 
 
 export default function TabTwoScreen() {
     return (
-        <View>Setup</View>
+        <View><Text>Setup</Text></View>
     );
 }
 
