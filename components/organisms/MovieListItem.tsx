@@ -6,7 +6,7 @@ const MoveListItem = ({item, onPress}: { item: Movie, onPress: () => void }) => 
     const {width} = Dimensions.get('window');
     const posterWidth = (width - 30) / 2;
     const posterHeight = (posterWidth * 3) / 2;
-
+    // if poster_path null
     return (
         <Pressable onPress={onPress} style={styles.itemContainer}>
             <Image
