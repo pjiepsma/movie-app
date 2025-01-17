@@ -3,7 +3,7 @@ import {SafeAreaView} from "react-native-safe-area-context";
 import React, {useEffect, useState,} from "react";
 import {Ionicons} from "@expo/vector-icons";
 import {useDebounce} from "use-debounce";
-import {Movie} from "@/interfaces/interfaces";
+import {Movie} from "@/interfaces/movies";
 import MoveListItem from "@/components/organisms/MovieListItem";
 import {fetchPopularMovies, fetchSearchedMovies} from "@/services/movieApiService";
 import {useRouter} from "expo-router";
@@ -29,7 +29,7 @@ const HomeScreen = () => {
             try {
                 const data = await fetchPopularMovies(page);
                 setPopularMovies(data);
-            } catch (err) {
+            } catch (err: any) {
                 setError(err);
             } finally {
                 setLoading(false);
@@ -45,7 +45,7 @@ const HomeScreen = () => {
             try {
                 const data = await fetchSearchedMovies(search, page); // Set the movies to state
                 setSearchedMovies(data);
-            } catch (err) {
+            } catch (err: any) {
                 setError(err);
             } finally {
                 setLoading(false);
@@ -55,7 +55,7 @@ const HomeScreen = () => {
         getSearchedMovies();
     }, [page, search]);
 
-    const handleMoviePress = (item) => {
+    const handleMoviePress = (item: Movie) => {
         router.push({
             pathname: '/(modals)/[id]', // Adjust this to your actual detail page path
             params: {

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Dimensions, Image, Pressable, StyleSheet, Text} from 'react-native';
-import {Movie} from "@/interfaces/interfaces";
+import {Movie} from "@/interfaces/movies";
 
 const MoveListItem = ({item, onPress}: { item: Movie, onPress: () => void }) => {
     const {width} = Dimensions.get('window');
@@ -17,10 +17,9 @@ const MoveListItem = ({item, onPress}: { item: Movie, onPress: () => void }) => 
                     borderRadius: 8,
                 }}
             />
-            <Text style={styles.title}>
+            <Text numberOfLines={1} style={[styles.title, {maxWidth: posterWidth}]}>
                 {item.title} ({item.release_date.split('-')[0]})
             </Text>
-            {/*<Text numberOfLines={4} ellipsizeMode="tail" style={{width: posterWidth}}>{item.overview}</Text>*/}
         </Pressable>
     );
 };
@@ -32,7 +31,7 @@ const styles = StyleSheet.create({
     title: {
         marginTop: 8,
         fontWeight: 'bold',
-        fontSize: 16,
+        fontSize: 12,
     },
 });
 
