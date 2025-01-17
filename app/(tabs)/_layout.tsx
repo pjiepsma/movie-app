@@ -2,7 +2,7 @@ import {Tabs} from 'expo-router';
 import React from 'react';
 import {Ionicons} from "@expo/vector-icons";
 import {Colors} from '@/constants/Colors';
-
+ 
 const TabLayout = () => {
     return (
         <Tabs

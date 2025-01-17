@@ -25,7 +25,6 @@ const DetailsPage = () => {
                 setLoading(false);
             }
         };
-
         getMovieDetails();
     }, [id]);
 
@@ -36,7 +35,6 @@ const DetailsPage = () => {
             });
         }
     }, [movie, navigation]);
-
 
     if (loading || !movie) {
         return <ActivityIndicator size="large" color="#0000ff"/>;
@@ -118,10 +116,6 @@ const styles = StyleSheet.create({
         fontSize: 16,
         marginBottom: 6,
         color: '#333',
-    },
-    link: {
-        color: '#007BFF',
-        textDecorationLine: 'underline',
     },
 });
 
